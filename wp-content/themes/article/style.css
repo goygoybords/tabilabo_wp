@@ -1,0 +1,403 @@
+/*
+Theme Name: Tabi Labo - Flashpark
+Theme URI: https://wordpress.org/themes/twentyfifteen/
+Author: FlashPark Inc. Philippines
+Author URI: https://wordpress.org/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Version: 1.3
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: twentyfifteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body {
+  margin: 0;
+}
+/** HEADER **/
+header#header {
+    background: #222;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    height: 47px;
+    top: 0;
+}
+div#logo {
+    position: relative;
+    top: 10px;    
+}
+div#logo img {
+    width: 210px;
+}
+nav#primary_nav_wrap a {
+    color:#fff;
+    background: url(../../app/images/icon-header-menu-arrow-down.png) 108px 10px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+header#header > div:last-child #primary_nav_wrap{
+    margin-top: 7px;
+    float: right;
+}
+#primary_nav_wrap ul{
+    list-style:none;
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+#primary_nav_wrap ul:hover {
+    background: #168dd9;
+}
+#primary_nav_wrap ul a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:12px;
+    line-height:32px;
+    padding:0 15px;
+    font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+#primary_nav_wrap ul li{
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0
+}
+#primary_nav_wrap ul li.current-menu-item{
+    background:#ddd
+}
+#primary_nav_wrap ul ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#168dd9;
+    padding:0;
+      z-index: 9999999;
+}
+#primary_nav_wrap ul ul li{
+    float:none;
+    width:200px
+}
+#primary_nav_wrap ul ul a{
+    line-height:120%;
+    padding:10px 15px
+}
+#primary_nav_wrap ul ul ul{
+    top:0;
+    left:100%
+}
+#primary_nav_wrap ul li:hover > ul{
+    display:block;
+    color:#fff;
+}
+
+nav#primary_nav_wrap .search-toggle {
+    cursor: pointer;
+    float: right;
+    height: 40px;
+    margin-right: 0;
+    margin-left: 1px;
+    text-align: center;
+    width: 48px;
+    top: 6px;
+}
+nav#primary_nav_wrap .search-toggle:before {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 14px;
+}
+nav#primary_nav_wrap .search-toggle:hover,
+nav#primary_nav_wrap .search-toggle.active {
+    background-color: #168dd9;
+}
+::selection {
+    background: #168dd9;
+    color: #fff;
+    text-shadow: none;
+}
+::-moz-selection { /* Code for Firefox */
+    background: #168dd9;
+    color: #fff;
+    text-shadow: none;
+}
+nav#primary_nav_wrap .search-box-wrapper {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    width: 100.89%;
+    z-index: 2;
+}
+nav#primary_nav_wrap .search-toggle .screen-reader-text {
+    left: 5px;
+}
+nav#primary_nav_wrap .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+}
+nav#primary_nav_wrap .search-box {
+    background-color: #168dd9;
+    padding: 12px;
+    height: 52px;
+}
+nav#primary_nav_wrap .search-box .search-field {
+    width: 328px;
+    background-color: #fff;
+    border: 0;
+    font-size: 16px;
+    padding: 2px 2px 3px 6px;
+}
+nav#primary_nav_wrap input[type="search"] {
+    -webkit-appearance: textfield;
+}
+nav#primary_nav_wrap input, nav#primary_nav_wrap textarea {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: #2b2b2b;
+    padding: 8px 10px 7px;
+}
+nav#primary_nav_wrap .search-submit {
+    display: none;
+}
+nav#primary_nav_wrap .glyphicon-white {
+    color: #fff;
+}
+nav#primary_nav_wrap .glyphicon-search {
+    margin-top: 8px;
+}
+nav#primary_nav_wrap .hide {
+    display: none;
+}
+nav#primary_nav_wrap .search-form {
+    float: right;
+}
+
+/** SIDE BAR **/
+aside.sidebar ul.navigation li.li_category {
+    padding: 10px 0;
+    padding-left: 30px;
+    color: #6B6B6B;
+}
+aside.sidebar ul.navigation li {
+    list-style: none;
+    padding-left: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 1.0);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 22px 0px 10px -25px rgba(0,0,0,0.45), inset -22px 0px 10px -25px rgba(0,0,0,0.45);
+}
+aside.sidebar ul.navigation {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+    -moz-margin-before: 0;
+    -moz-margin-after: 0;
+    -moz-padding-start: 0;
+}
+aside.sidebar ul.navigation li a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 12.61px;
+}
+aside.sidebar ul.navigation li a:last-child {
+    /*position: relative;*/
+    bottom: 20px;
+}
+aside.sidebar ul.navigation li a img { width: 50px; }
+
+
+/** MAIN CONTAINER **/
+
+.single-view-article .post .article-thumbnail .image {
+    width: 100%;
+    text-align: center;
+    background: #b2b2b2 url(images/pattern-light.svg) repeat fixed;
+}
+.single-view-article .post .article-thumbnail .post-detail {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.single-view-article .post .article-thumbnail .post-detail span.cat-links {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.single-view-article .post .article-thumbnail .post-detail span.cat-links a:hover,
+.single-view-article .post .article-thumbnail .post-detail .enty-author a:hover{
+    color:#337ab7;
+}
+.single-view-article .post .article-thumbnail .post-detail span.cat-links a {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+.single-view-article .post .article-thumbnail .post-detail .entry-title {
+    font-size: 33px;
+    font-weight: 300;
+    line-height: 1.0909090909;
+    margin-bottom: 12px;
+    margin: 15px 0 12px 0;
+}
+.single-view-article .post .article-thumbnail .post-detail .entry-title a {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+
+.single-view-article .post .article-thumbnail .post-detail .enty-author a {
+    color: #767676;
+    font-size: 11px;
+    text-decoration: none;
+}
+.single-view-article .post .article-thumbnail .post-detail .entry-description p{
+        line-height: 1.6;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.article-container > article {
+    float: left;
+    max-width: 50%;
+    /*height: 314px; */
+    background: #000 url(../images/pattern-dark.svg) repeat fixed;
+}
+.view-container a.post-thumbnail .image img { max-width: 100%; }
+.view-container .entry-header {
+    border-color: #000;
+    border-style: solid;
+    border-width: 0;
+    height: 96px;
+    background: #000000;
+    opacity: 0.80;
+    width: 100%;
+    color: #fff;
+    margin-top: -96px;
+}
+.view-container span.cat-links a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+}
+.view-container .entry-title {
+    margin: 5px 5px 0 10px;
+    line-height: .3em;
+}
+.view-container .entry-header .entry-meta {
+    padding:10px 0 0 10px; 
+}
+.view-container .entry-title a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 13px;
+}
+.view-container .entry-title a:hover, span.cat-links a:hover {
+    color: #168dd9;
+}
+.view-container article .image img:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.view-container-2 a.post-thumbnail, .view-container-2 div.post-detail {
+    float: left;
+    width: 40%;
+}
+div.view-container-2 li {
+    border-bottom: 1px solid #dcdcdc;
+}
+.view-container-2 div.post-detail {
+    width: 60%;
+    padding: 15px 40px 10px 40px;
+    line-height: 1.5;
+}
+.view-container-2 a.post-thumbnail img { width:100%; }
+.view-container-2 span.cat-links a, .view-container-2 div.entry-title a {
+    font-weight: 600;
+    color: #2b2b2b;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.view-container-2 div.entry-title a { font-size: 110%; }
+.view-container-2  div.entry-title {
+    margin: 0;
+}
+.view-container-2 .enty-author { padding-bottom: 10px; }
+.view-container-2 .enty-author a {
+    font-size: 10px; 
+    color: #767676;
+}
+.view-container-2 .enty-author a:hover {
+    text-decoration: none;
+    color: #337ab7;
+}
+.enty-author .glyphicon-user {
+    margin-right: 5px;
+}
+.view-container-2.entry-description { padding-top: 10px; }
+
+p.category_tag { display: inline; }
+p.category_tag span{
+    position: absolute;
+    text-transform: uppercase;
+    padding: 4px 10px 2px 10px;
+    font-family: DINCondensed;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+} p.category_tag span a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.Trend { background: #FFCC00; }
+.Feature { background: #263342; }
+.Culture { background: #6C473D; }
+.Life.Style { background: #ED7066; }
+.Beauty { background: #C42A32; }
+.Technology { background: #808080; }
+.Issue { background: #3E8442; }
+.Edge.Runner { background: #C79A6C; }
+.Sports{ background: #475088; }
+.Travel{ background: #76C8CD; }
+.Invitation { background: #328FC2; }
+.Event { background: #484747; }
+.Press { background: #484747; }
+
+/* scroll bar */
+div.scrollup-container > a.scrollup {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    display: none;
+    background-color: #8A857F;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 80%;
+    filter: alpha(opacity=65);
+    -moz-opacity: 0.65;
+    opacity: 0.65;
+    z-index: 9999;
+}
+div.scrollup-container > a.scrollup:hover {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #A7A6A6;
+}
+div.post-detail a:hover {
+    text-decoration: none;
+    color: #168dd9;
+}
+div.view-container-2 ol#articles { 
+    padding: 0;
+    margin: 0;
+}
+div.view-container-2 li { clear: both; }
+div.view-container { top: 47px; }
