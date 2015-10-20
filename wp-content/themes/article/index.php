@@ -15,8 +15,6 @@
  */
 
 get_header(); ?>
-
-
 <div class="scrollup-container">
         <a href="#" class="scrollup">
             <span>トップへ戻る</span>
@@ -93,8 +91,6 @@ get_header(); ?>
                               );
             $query2 = new WP_Query($options2);
             
-            var_dump( $query2 );
-         
             while ( $query2->have_posts() ) : $query2->the_post();
                 $cat = get_the_category();
                 $category_name = " ";
