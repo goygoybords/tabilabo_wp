@@ -46,15 +46,8 @@
                         </div>
                         <div id="search_container" class="search-box-wrapper hide">
                             <div class="search-box">
-                                <?php get_search_form();?>
-                            <!--     <form role="search" method = "post" class="search-form" action="{{ path('frontend_native_search_action') }} ">
-                                    <label>
-                                        <span class="screen-reader-text">検索:</span>
-                                        <input type="search" class="search-field" placeholder="検索 …" value="" name="search" title="検索:">
-                                    </label>
-                                    <input type="submit" class="search-submit" value="検索">
-                                </form>         
-                            </div> -->
+                                <?php get_search_form();?>    
+                            </div>
                         </div>
                     </nav>
                 </div>

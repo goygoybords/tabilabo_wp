@@ -22,8 +22,7 @@ get_header(); ?>
     </div>
     <div class = "view-container">      
         <div class="article-wrapper">  
-            <?php 
-            
+            <?php        
                 $options = array('posts_per_page' => 6 , 'cat' => '-12,-13,-14');
                 $query = new WP_Query($options);
                 while ( $query->have_posts() ) : $query->the_post();
@@ -47,7 +46,7 @@ get_header(); ?>
                             </span>
                         </p>
                         <!-- content here -->
-                        <a href = "<?php the_permalink(); ?>" class = "post-thumbnail">
+                        <a href = "<?php echo the_permalink(); ?>" class = "post-thumbnail">
                             <div class = "image">
                                 <?php 
                                     if(has_post_thumbnail()) 
@@ -72,7 +71,7 @@ get_header(); ?>
                             </div>
                             
                             <h1 class="entry-title">
-                                <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                <a href="<?php echo the_permalink(); ?>" rel="bookmark">
                                     <?php the_title(); ?>
                                 </a>
                             </h1>  
@@ -84,13 +83,15 @@ get_header(); ?>
         <div class="view-pagination"></div>
     </div>
     <div class = "view-container-2">
-        <?php 
+        <ol id="articles">
+         <?php 
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $options2 = array( 'offset' => 6  , 'cat' => '-12,-13,-14' ,  
-                              'posts_per_page' => 2 , 'paged' => $paged
+            $options2 = array( 
+                            'offset' => 6  , 'cat' => '-12,-13,-14' ,  
+                              'posts_per_page' => 4 
+                              // , 'paged' => $paged
                               );
             $query2 = new WP_Query($options2);
-            
             while ( $query2->have_posts() ) : $query2->the_post();
                 $cat = get_the_category();
                 $category_name = " ";
@@ -100,9 +101,8 @@ get_header(); ?>
                     $category_id = $c->term_id;
                     $category_name =  $c->name;
                     $category_link = get_category_link( $category_id );
-                }
+             }
         ?>
-        <ol id="articles">
                 <li style = "list-style:none" id = "post-<?php echo $post_id; ?>" class = "post-<?php echo $post_id; ?> post type-post 
                     has-post-thumbnail list-container">
                     <div class = "article-thumbnail">
@@ -155,16 +155,11 @@ get_header(); ?>
                         </div>
                     </div>
                 </li>
-        </ol>
         <?php endwhile; ?>
+        </ol>
+ 
+        
     </div>
-    <div class="navigation">
-  <div class="alignleft"><?php previous_posts_link('&laquo; Previous') ?></div>
-  <div class="alignright"><?php next_posts_link('More &raquo;') ?></div>
-</div>
-    <?php 
-        wp_reset_query();
-        wp_reset_postdata(); 
-    ?>
-
+  
+    
 <?php get_footer(); ?>

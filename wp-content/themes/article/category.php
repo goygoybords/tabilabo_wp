@@ -4,11 +4,14 @@
 */
 
 get_header(); ?> 
-	<?php 
-		single_cat_title( '', true ); 
-		echo category_description();
 
-	?>
+
+    <header class="archive-header">
+        <h1 class="archive-title"><?php single_cat_title( '', true ); ?></h1>
+        <div class="archive-description">
+            <?php echo category_description(); ?>
+        </div>
+    </header>
     
    	<div class = "view-container-2">
         <ol id="articles">
