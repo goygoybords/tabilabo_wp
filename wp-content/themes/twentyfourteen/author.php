@@ -28,7 +28,7 @@ get_header(); ?>
 						 */
 						the_post();
 
-						printf( __( 'All posts by %s', 'twentyfourteen' ), get_the_author() );
+						printf( __( '%s', 'twentyfourteen' ), get_the_author() );
 					?>
 				</h1>
 				<?php if ( get_the_author_meta( 'description' ) ) : ?>

@@ -131,7 +131,6 @@
 	<header role="banner" class="site-header" id="masthead">
 		<div class="header-main tablet_and_mobile_hide">
 			<div id="mobile_menu_button"></div>
-			
 			<h1 class="site-title mobile_hide">
 				<a data-label="logo" data-id="header" rel="home" href="<?php bloginfo('home');?>">
 					<img width="200" alt="TABI LABO" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/logo.png"></a>
@@ -155,22 +154,27 @@
 				</div>			
 			</nav>
 		</div>
+
+		<!-- search bar -->
 		<div class="search-box-wrapper hide" id="search-container">
 			<div class="search-box">
-				<form action="http://tabi-labo.com/" class="search-form" method="get" role="search">
-				<label>
-					<span class="screen-reader-text">検索:</span>
-					<input type="search" title="検索:" name="s" value="" placeholder="検索 …" class="search-field">
-				</label>
-				<input type="submit" value="検索" class="search-submit">
-			</form>			</div>
+				<form action="<?php echo home_url('/'); ?>" class="search-form" method="get" role="search">
+					<label>
+						<span class="screen-reader-text">検索:</span>
+						<input type="search" title="検索:" name="s" value="" placeholder="検索 …" class="search-field">
+					</label>
+					<input type="submit" value="検索" class="search-submit">
+				</form>			
+			</div>
 		</div>
 	</header><!-- #masthead -->
 
+	<!-- mobile searchbar -->
 	<div class="header-mobile site-header tablet_and_mobile_only">
-		<a data-label="logo" data-id="header" rel="home" href="http://tabi-labo.com/"><img width="210" alt="TABI LABO" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/logo.png"></a>
+		<a data-label="logo" data-id="header" rel="home" href="<?php bloginfo('home'); ?>">
+			<img width="210" alt="TABI LABO" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/logo.png"></a>
 		<div id="mobile-search-container" class="search-box hide">
-			<form action="http://tabi-labo.com/" class="search-form" method="get" role="search">
+			<form action="<?php echo home_url('/'); ?>" class="search-form" method="get" role="search">
 				<label>
 					<span class="screen-reader-text">検索:</span>
 					<input type="search" title="検索:" name="s" value="" placeholder="検索 …" class="search-field">

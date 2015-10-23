@@ -122,128 +122,25 @@ get_header(); ?>
 				</div><!-- .swiper-wrapper -->
 			</div><!-- #featured-content .featured-content -->
 		</div>
-		<!-- mobile menu bar -->
+		
+		<!-- menu here -->
+		<?php 
+			get_template_part( 'content' , 'mobilemenu' );
+			get_template_part( 'content' , 'tabletmenu' );
+		?>
 
-		<div class="menu_bar swiper-container mobile_menu_bar mobile_only swiper-free-mode">
-			<div class="swiper-wrapper">
-				<?php 
-					$args = array('type' => 'post', 'exclude' => '12 13 14', 'taxonomy' => 'category'); 
-					$categories = get_categories($args); 
-					foreach ($categories as $category): 
-				?>  
-				<div class="swiper-slide swiper-slide-visible swiper-slide-active">
-					<div class="title">
-						<a href="#">
-							<?php echo $category->name; ?>
-						</a>
-					</div>
-				</div>	
-				<?php endforeach; ?>
-				<!-- <div class="swiper-slide swiper-slide-visible swiper-slide-active" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/trend/">TREND</a></div>
-					</div>
-				<div class="swiper-slide swiper-slide-visible">
-				<div class="title">
-					<a href="http://tabi-labo.com/category/travel/">TRAVEL</a></div>
-				</div>
-				<div class="swiper-slide swiper-slide-visible" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/culture/">CULTURE</a></div>
-				</div>
-				<div class="swiper-slide swiper-slide-visible" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/lifestyle/">LIFESTYLE</a></div>
-					</div>
-				<div class="swiper-slide" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/food/">FOOD</a></div>
-					</div>
-				<div class="swiper-slide" >
-				<div class="title"><a href="http://tabi-labo.com/category/edge-runner/">EDGE RUNNER</a></div>
-				</div>
-						<div class="swiper-slide" >
-				<div class="title"><a href="http://tabi-labo.com/category/issue/">ISSUE</a></div>
-				</div>
-						<div class="swiper-slide" >
-				<div class="title"><a href="http://tabi-labo.com/category/technology/">TECHNOLOGY</a></div>
-				</div>
-						<div class="swiper-slide" >
-				<div class="title"><a href="http://tabi-labo.com/category/beauty/">BEAUTY</a></div>
-				</div>
-						<div class="swiper-slide" >
-				<div class="title"><a href="http://tabi-labo.com/category/sports/">SPORTS</a></div>
-				</div> -->
-			</div>
-		</div>
-
-		<!-- tablet menu bar -->
-		<div class="menu_bar swiper-container tablet_menu_bar tablet_only swiper-free-mode">
-			<div class="swiper-wrapper" >
-				<?php 
-					$args = array('type' => 'post', 'exclude' => '12 13 14', 'taxonomy' => 'category'); 
-					$categories = get_categories($args); 
-					foreach ($categories as $category): 
-				?>  	
-				<div class="swiper-slide swiper-slide-visible swiper-slide-active">
-					<div class="title">
-						<a href="#"><?php echo $category->name; ?></a>
-					</div>
-				</div>
-				<?php endforeach; ?>
-				<!-- <div class="swiper-slide swiper-slide-visible" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/travel/">TRAVEL</a>
-					</div>
-				</div>
-				<div class="swiper-slide swiper-slide-visible">
-					<div class="title">
-						<a href="http://tabi-labo.com/category/culture/">CULTURE</a>
-					</div>
-				</div>
-				<div class="swiper-slide swiper-slide-visible">
-					<div class="title">
-						<a href="http://tabi-labo.com/category/lifestyle/">LIFESTYLE</a>
-					</div>
-				</div>
-				<div class="swiper-slide swiper-slide-visible" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/food/">FOOD</a>
-					</div>
-				</div>
-				<div class="swiper-slide" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/edge-runner/">EDGE RUNNER</a>
-					</div>
-				</div>
-				<div class="swiper-slide" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/issue/">ISSUE</a>
-					</div>
-				</div>
-				<div class="swiper-slide" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/technology/">TECHNOLOGY</a>
-					</div>
-				</div>
-				<div class="swiper-slide" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/beauty/">BEAUTY</a>
-					</div>
-				</div>
-				<div class="swiper-slide" >
-					<div class="title">
-						<a href="http://tabi-labo.com/category/sports/">SPORTS</a>
-					</div>
-				</div> -->
-			</div>
-		</div>
-
+		
 		<!-- primary -->
 		<div id="primary" class="content-area">
 			<div role="main" class="site-content" id="content">
 				 <?php        
-		                $options = array( 'cat' => '-12,-13,-14');
+				 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		                $options = array(
+		                				'posts_per_page' => 5 ,
+		                				'paged' => $paged , 
+		                				'cat' => '-12,-13,-14'
+		                				
+		                				);
 		                $query = new WP_Query($options);
 		                while ( $query->have_posts() ) : $query->the_post();
 		                    $cat = get_the_category();
@@ -261,7 +158,7 @@ get_header(); ?>
 						<div class="post_category">
 							<span><?php echo $category_name; ?></span>
 						</div>
-						<div class="post_category_line lifestyle"></div>
+						<div class="post_category_line <?php strtolower($category_name); ?>"></div>
 						<a href="<?php the_permalink(); ?>" class="post-thumbnail">
 							<?php 
 								$image_src = wp_get_attachment_image_src( get_post_thumbnail_id(),'full' );
@@ -274,7 +171,9 @@ get_header(); ?>
 					<div class="thumb_box_pc mobile_hide category_tag_box">
 						<p class="category_tag">
 							<span class="<?php echo strtolower($category_name); ?>">
-								<a href="<?php echo esc_url( $category_link ); ?>"><?php echo $category_name; ?></a>
+								<a href="<?php echo esc_url( $category_link ); ?>">
+									<?php echo $category_name; ?>
+								</a>
 							</span>
 						</p>
 							<a href="<?php the_permalink(); ?>" class="post-thumbnail">
@@ -315,24 +214,15 @@ get_header(); ?>
 					</div><!-- .entry-summary -->
 				</article><!-- #post-## -->
 				<?php endwhile; ?>
+				
+				<?php twentyfourteen_paging_nav(); ?>
 
-				<nav role="navigation" class="navigation paging-navigation" style="display: none;">
-					<h1 class="screen-reader-text">投稿ナビゲーション</h1>
-					<div class="pagination loop-pagination">
-						<!-- <span class="page-numbers current">1</span>
-							<a href="http://tabi-labo.com/page/2/" class="page-numbers">2</a>
-							<span class="page-numbers dots">…</span>
-							<a href="http://tabi-labo.com/page/349/" class="page-numbers">349</a>
-							<a href="http://tabi-labo.com/page/2/" class="next page-numbers">次へ →</a>		 -->
-					</div><!-- .pagination -->
-				</nav><!-- .navigation -->
 			</div> <!-- end of content -->
 
 		</div> <!-- end of primary -->
 	
 	</div><!-- #main-content -->
 
-	
 <?php
 get_sidebar();
 get_footer();

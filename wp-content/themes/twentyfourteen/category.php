@@ -28,6 +28,13 @@ get_header(); ?>
 					endif;
 				?>
 			</header><!-- .archive-header -->
+			<div class = "archive_menu_bar">
+				<?php 
+					get_template_part( 'content' , 'categorymenu');
+					get_template_part( 'content' , 'mobilemenu' );
+					get_template_part( 'content' , 'tabletmenu' );
+				?>
+			</div>
 
 			<?php
 					// Start the Loop.

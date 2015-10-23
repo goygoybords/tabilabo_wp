@@ -9,7 +9,7 @@
  * @since Twenty Fourteen 1.0
  */
 ?>
-
+			
 		</div><!-- #main -->
 		<!-- hide footer -->
 		<div class="tablet_and_mobile_only" id="footer_menu">
