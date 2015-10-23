@@ -21,8 +21,7 @@ get_header(); ?>
 		<div class="tabletmini_and_mobile_only" id="mobile_featured">
 		<div class="featured-content swiper-container" id="featured-content">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide swiper-slide-visible swiper-slide-active">
-					 <?php        
+				 <?php        
 		                $options = array('posts_per_page' => 6 , 'cat' => '-12,-13,-14');
 		                $query = new WP_Query($options);
 		                while ( $query->have_posts() ) : $query->the_post();
@@ -36,6 +35,7 @@ get_header(); ?>
 		                        $category_link = get_category_link( $category_id );
 		                    }
 		           	 	?>
+				<div class="swiper-slide swiper-slide-visible swiper-slide-active">
 					<article id="post-<?php echo $post_id; ?>" class="post-<?php echo $post_id; ?> post type-post status-publish format-standard has-post-thumbnail hentry category-trend tag-featured tag-20728 tag-the-trash tag-27158 tag-party tag-21495 category_tag_box has-post-thumbnail">
 						<p class="category_tag">
 							<span class="<?php echo strtolower($category_name); ?>">
@@ -58,8 +58,8 @@ get_header(); ?>
 								</h1>	
 							</header><!-- .entry-header -->
 					</article><!-- #post-## -->
-					<?php endwhile; ?>
 				</div><!-- .swiper-slide -->
+				<?php endwhile; ?>
 			</div><!-- .swiper-wrapper -->
 			<div class="pagination">
 				<span class="swiper-pagination-switch"></span>
@@ -136,7 +136,7 @@ get_header(); ?>
 				 <?php        
 				 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		                $options = array(
-		                				'posts_per_page' => 5 ,
+		                				// 'posts_per_page' => 5 ,
 		                				'paged' => $paged , 
 		                				'cat' => '-12,-13,-14'
 		                				
@@ -215,7 +215,7 @@ get_header(); ?>
 				</article><!-- #post-## -->
 				<?php endwhile; ?>
 				
-				<?php twentyfourteen_paging_nav(); ?>
+				<?php //twentyfourteen_paging_nav(); ?>
 
 			</div> <!-- end of content -->
 

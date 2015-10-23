@@ -17,8 +17,9 @@
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<link rel="shortcut icon" href="http://tabilabo.s3.amazonaws.com/wp-content/uploads/2014/07/favicon.ico">
-       
+       	
 		<!-- load custom css -->
+		 <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 		<link href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" rel="stylesheet" />
 		<link media="all" type="text/css" href="http://tabi-labo.com/wp-content/themes/tabilabo/css/wpp.css" rel="stylesheet">
 		<link href="<?php bloginfo('template_url'); ?>/swiper/swiper.min.css" rel="stylesheet">
