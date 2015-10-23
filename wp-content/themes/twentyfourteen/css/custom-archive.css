@@ -1,0 +1,37 @@
+/**
+ * media screen
+ * -----------------------------------------------------------------------------
+ */
+
+/* big screen archive layout */
+@media screen and (max-width: 1200px) {
+	.list-view .site-content .entry-header .cat-links,
+	.list-view .site-content .entry-header .entry-meta,
+	.list-view .site-content footer.entry-meta{
+		display:none;
+	}
+}
+@media screen and (max-width: 1330px) {
+
+}
+@media screen and (min-width: 1331px) {
+	.list-view .site-content .entry-header .entry-title{
+		font-size:25px;
+		letter-spacing:0.05em;
+		line-height:1.4em;
+	}
+	.site-content .entry-header,
+	.site-content .entry-meta,
+	.site-content .entry-summary{
+		max-width:1000px;
+	}
+	.site-content .entry-summary{
+		margin-top:10px;
+	}
+}
+@media screen and (min-width: 1441px) {
+	.list-view .site-content .entry-summary{
+		font-size:17px;
+		letter-spacing:0.05em;
+	}
+}

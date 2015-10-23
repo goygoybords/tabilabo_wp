@@ -11,6 +11,7 @@
 ?>
                 <input type = "hidden" class = "imglink" value = "<?php bloginfo('template_url'); ?>/images/menu-icons/">
              </main>
+            
             </section>
         </section>
         <!-- JS -->

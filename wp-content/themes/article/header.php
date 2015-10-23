@@ -34,11 +34,7 @@
                 <div id = "header-menu">
                     <nav id="primary_nav_wrap">
                         <ul>
-                          <li><a href="#">About TabiLabo</a>
-                            <ul>
-                                <?php wp_nav_menu($header_menu_options); ?>
-                            </ul>
-                          </li>
+                            <?php wp_nav_menu($header_menu_options); ?>
                         </ul>
                         <div class="search-toggle" id="btn_search">
                             <span class="glyphicon glyphicon-search glyphicon-white"></span>
