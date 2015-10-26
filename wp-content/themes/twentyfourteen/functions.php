@@ -518,13 +518,11 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
 	require get_template_directory() . '/inc/featured-content.php';
 }
 
-function ShortenText($text, $chars_limit , $after = "  ... " ) 
+function ShortenText($text, $chars_limit , $after = "  … " ) 
 {
-	$chars_text = strlen($text);
-	$text = $text." ";
-	$text = substr($text,0,$chars_limit);
-	$text = substr($text,0,strrpos($text,' '));
-	/* $text = strip_tags($text); */
-	if ($chars_text > $chars_limit) { $text = $text.$after; }
+	if(strlen($text) > $chars_limit) 
+	{
+		$text = substr($text, 0, $chars_limit).$after;
+	}
 	return $text;
 }
