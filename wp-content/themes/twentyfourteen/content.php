@@ -60,28 +60,42 @@
 	<!-- .entry-summary -->
 	<?php else : ?>
 	<!-- <div class="entry-content"> -->
-	<div class="entry-summary">
-		<?php
-			echo "<p>";
-            echo ShortenText( strip_tags(get_the_content()), 500); 
-            echo '<a href = "<?php the_permalink(); ?>">  > 続きを読む</a>';
-            echo "</p>";
-                       
-			/* translators: %s: Name of current post */
-			// the_content( sprintf(
-			// 	__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ),
-			// 	the_title( '<span class="screen-reader-text">', '</span>', false )
-			// ) );
+	<?php if ( is_single() ) : ?>
+			<div class="entry-summary">
+				<?php
+					the_content();
+		                      
+					wp_link_pages( array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+					) );
+				?>
+			</div>
+			<!-- .entry-content -->
+		<?php else : ?>
+				<div class="entry-summary">
+					<p>
+						<?php echo ShortenText( strip_tags(get_the_content()), 500); ?>
+						<a href = "<?php the_permalink(); ?>">  > 続きを読む</a>
+					</p>
+				<?php           
+					/* translators: %s: Name of current post */
+					// the_content( sprintf(
+					// 	__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ),
+					// 	the_title( '<span class="screen-reader-text">', '</span>', false )
+					// ) );
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
+					wp_link_pages( array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfourteen' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+					) );
+				?>
+				</div><!-- .entry-content -->
+		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php the_tags( '<footer class="entry-meta"><span class="tag-links">', '', '</span></footer>' ); ?>

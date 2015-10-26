@@ -13,11 +13,26 @@
 		</div><!-- #main -->
 		<!-- hide footer -->
 		<div class="tablet_and_mobile_only" id="footer_menu">
-			<div data-page_dir="" data-scroll_id="" id="next_page_btn" class="hide"><a data-label="nextpage" data-id="footer_button" href="javascript:void(0)"><img alt="next" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/next.png"></a></div>
-			<div class="footer_menu_button"><a data-label="home" data-id="footer_button" href="http://tabi-labo.com/"><img onclick="ga('send', 'event', 'footer_menu', 'click', 'home')" alt="home" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_home.png"></a></div>
-			<div id="footer_mobile_menu_button" class="footer_menu_button"><a data-label="catgory" data-id="footer_button" href="javascript:void(0)"><img onclick="ga('send', 'event', 'footer_menu', 'click', 'category')" alt="category" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_category.png"></a></div>
-			<div class="footer_menu_button"><a data-label="ranking" data-id="footer_button" href="http://tabi-labo.com/daily-ranking/"><img onclick="ga('send', 'event', 'footer_menu', 'click', 'ranking')" alt="ranking" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_ranking.png"></a></div>
-			<div id="footer_search_button" class="footer_menu_button"><a data-label="search" data-id="footer_button"><img onclick="ga('send', 'event', 'footer_menu', 'click', 'search')" alt="search" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_search.png"></a></div>
+			<div data-page_dir="" data-scroll_id="" id="next_page_btn" class="hide">
+				<a data-label="nextpage" data-id="footer_button" href="javascript:void(0)">
+				<img alt="next" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/next.png"></a>
+			</div>
+			<div class="footer_menu_button">
+				<a data-label="home" data-id="footer_button" href="<?php bloginfo('home'); ?>">
+				<img onclick="ga('send', 'event', 'footer_menu', 'click', 'home')" alt="home" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_home.png"></a>
+			</div>
+			<div id="footer_mobile_menu_button" class="footer_menu_button">
+				<a data-label="catgory" data-id="footer_button" href="javascript:void(0)">
+				<img onclick="ga('send', 'event', 'footer_menu', 'click', 'category')" alt="category" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_category.png"></a>
+			</div>
+			<div class="footer_menu_button">
+				<a data-label="ranking" data-id="footer_button" >
+				<img onclick="ga('send', 'event', 'footer_menu', 'click', 'ranking')" alt="ranking" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_ranking.png"></a>
+			</div>
+			<div id="footer_search_button" class="footer_menu_button">
+				<a data-label="search" data-id="footer_button">
+				<img onclick="ga('send', 'event', 'footer_menu', 'click', 'search')" alt="search" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/footer_search.png"></a>
+			</div>
 		</div>
 
 		<!-- scroll up -->
