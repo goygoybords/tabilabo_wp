@@ -135,8 +135,6 @@ get_header(); ?>
 		                	);
 		    $query = new WP_Query($options);
 		?>
-
-		
 		<!-- primary -->
 		<div id="primary" class="content-area">
 			<div role="main" class="site-content" id="content">
@@ -164,9 +162,7 @@ get_header(); ?>
                                 echo '<img class="attachment-twentyfourteen-full-width wp-post-image" src="' . $image_src[0]  . '" "  />';
 							?>
 						</a>
-							
 					</div>
-					
 					<div class="thumb_box_pc mobile_hide category_tag_box">
 						<p class="category_tag">
 							<span class="<?php echo strtolower($category_name); ?>">

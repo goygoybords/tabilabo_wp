@@ -85,12 +85,26 @@
     $(".li_food").prepend(food);
 
     var imglink2 = $(".imglink2").val();
-    //alert(imglink2);
-    $('.site-content').infinitescroll({
-            navSelector  : "nav.navigation", 
-            nextSelector : "a.next",    
-            itemSelector : "article.post",          
-            loadingImg   : 'http://localhost/tabilabo_wp/wp-content/themes/twentyfourteen/images/loader.gif',
-            loadingText  : "releasing new post wait for a while"
 
-        });
+    var ias = jQuery.ias({
+        container:  '.site-content',
+        item:       'article.post',
+        pagination: 'nav.navigation',
+        next:       'a.next'
+    });
+
+    ias.extension(new IASSpinnerExtension());            // shows a spinner (a.k.a. loader)
+    //ias.extension(new IASTriggerExtension({offset: 3})); // shows a trigger after page 3
+    ias.extension(new IASNoneLeftExtension({
+        text: 'There are no more pages left to load.'      // override text when no pages left
+    }));
+
+    //alert(imglink2);
+    // $('.site-content').infinitescroll({
+    //         navSelector  : "nav.navigation", 
+    //         nextSelector : "a.next",    
+    //         itemSelector : "article.post",          
+    //         loadingImg   : 'http://localhost/tabilabo_wp/wp-content/themes/twentyfourteen/images/loader.gif',
+    //         loadingText  : "releasing new post wait for a while"
+
+    //     });

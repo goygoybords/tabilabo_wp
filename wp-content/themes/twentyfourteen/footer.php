@@ -53,7 +53,7 @@
 		<script src="<?php bloginfo('template_url'); ?>/swiper/swiper.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/slidemenu.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/autopager.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/js/jquery.infinitescroll.min.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/js/jquery-ias.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>
 		<script src="http://tabi-labo.com/wp-content/themes/tabilabo/js/jquery.inview.min.js"></script>
 	<!-- /load custom js -->
