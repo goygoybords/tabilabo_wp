@@ -136,9 +136,9 @@ get_header(); ?>
 				 <?php        
 				 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		                $options = array(
-		                				 'posts_per_page' => 10,
-		                				'paged' => $paged 
-		                				// 'cat' => '-12,-13,-14'
+		                				 //'posts_per_page' => 5,
+		                				  'paged' => $paged ,
+		                				  'cat' => '-12,-13,-14'
 		                				
 		                				);
 		                $query = new WP_Query($options);
