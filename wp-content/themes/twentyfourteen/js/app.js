@@ -83,3 +83,14 @@
     $(".li_feature").prepend(feature);
     $(".li_issue").prepend(issue);
     $(".li_food").prepend(food);
+
+    var imglink2 = $(".imglink2").val();
+    //alert(imglink2);
+    $('.site-content').infinitescroll({
+            navSelector  : "nav.navigation", 
+            nextSelector : "a.next",    
+            itemSelector : "article.post",          
+            loadingImg   : 'http://localhost/tabilabo_wp/wp-content/themes/twentyfourteen/images/loader.gif',
+            loadingText  : "releasing new post wait for a while"
+
+        });

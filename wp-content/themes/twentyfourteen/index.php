@@ -127,6 +127,13 @@ get_header(); ?>
 		<?php 
 			get_template_part( 'content' , 'mobilemenu' );
 			get_template_part( 'content' , 'tabletmenu' );
+
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		    $options = array( //'posts_per_page' => 5,
+                				'paged' => $paged ,
+                				'cat' => '-12,-13,-14'
+		                	);
+		    $query = new WP_Query($options);
 		?>
 
 		
@@ -134,14 +141,6 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<div role="main" class="site-content" id="content">
 				 <?php        
-				 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		                $options = array(
-		                				 //'posts_per_page' => 5,
-		                				  'paged' => $paged ,
-		                				  'cat' => '-12,-13,-14'
-		                				
-		                				);
-		                $query = new WP_Query($options);
 		                while ( $query->have_posts() ) : $query->the_post();
 		                    $cat = get_the_category();
 		                    $category_name = " ";
@@ -152,7 +151,7 @@ get_header(); ?>
 		                        $category_name =  $c->name;
 		                        $category_link = get_category_link( $category_id );
 		                    }
-		           	 	?>
+		         ?>
 				<article class="post-<?php echo $post_id; ?> post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle tag-featured tag-19482 tag-27071 tag-plant tag-26991 sns_count_box has-post-thumbnail" id="post-<?php echo $post_id; ?>">
 					<div class="thumb_box_mobile mobile_only">
 						<div class="post_category">
