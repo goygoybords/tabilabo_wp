@@ -71,6 +71,7 @@
     var sports    = '<a href=""><img src=" ' + imglink + 'icon_sports.png">' + '</a>' ;
     var feature   = '<a href=""><img src=" ' + imglink + 'icon_feature.png">' + '</a>' ;
     var issue     = '<a href=""><img src=" ' + imglink + 'icon_issue.png">' + '</a>' ;
+    var food      = '<a href=""><img src=" ' + imglink + 'icon_food.png">' + '</a>' ;
     $(".li_trend").prepend(trend);
     $(".li_travel").prepend(travel);
     $(".li_culture").prepend(culture);
@@ -81,3 +82,4 @@
     $(".li_sports").prepend(sports);
     $(".li_feature").prepend(feature);
     $(".li_issue").prepend(issue);
+    $(".li_food").prepend(food);

@@ -136,9 +136,9 @@ get_header(); ?>
 				 <?php        
 				 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		                $options = array(
-		                				// 'posts_per_page' => 5 ,
-		                				'paged' => $paged , 
-		                				'cat' => '-12,-13,-14'
+		                				 'posts_per_page' => 10,
+		                				'paged' => $paged 
+		                				// 'cat' => '-12,-13,-14'
 		                				
 		                				);
 		                $query = new WP_Query($options);
@@ -208,14 +208,14 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 					<div class="entry-summary">
 						<p>
-                            <?php echo ShortenText( strip_tags(get_the_content()), 500); ?>
+                            <?php echo ShortenText( strip_tags(get_the_content()), 300); ?>
                             <a href = "<?php the_permalink(); ?>">  > 続きを読む</a>
                         </p>
 					</div><!-- .entry-summary -->
 				</article><!-- #post-## -->
 				<?php endwhile; ?>
 				
-				<?php //twentyfourteen_paging_nav(); ?>
+				<?php twentyfourteen_paging_nav(); ?>
 
 			</div> <!-- end of content -->
 
