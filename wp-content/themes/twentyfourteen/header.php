@@ -29,9 +29,7 @@
 		<link href="<?php bloginfo('template_url'); ?>/css/custom-archive.css" rel="stylesheet">
 		<link href="<?php bloginfo('template_url'); ?>/css/jquery.slidemenu.css" rel="stylesheet"> 
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-
 		<!-- /load custom css -->
-
 	</head>
 
 <body <?php body_class(); ?> >
@@ -136,7 +134,6 @@
 				<a data-label="logo" data-id="header" rel="home" href="<?php bloginfo('home');?>">
 					<img width="200" alt="TABI LABO" src="http://tabi-labo.com/wp-content/themes/tabilabo/images/logo.png"></a>
 				</h1>	
-			
 			
 			<div class="search-toggle">
 				<a class="screen-reader-text" href="#search-container">検索</a>

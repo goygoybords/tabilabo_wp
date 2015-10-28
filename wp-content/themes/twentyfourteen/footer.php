@@ -43,8 +43,7 @@
 		</div>
 
 		<input type = "hidden" class = "imglink" value = "<?php bloginfo('template_url'); ?>/images/menu-icons/">
-		<input type = "hidden" class = "imglink2" value = "<?php bloginfo('template_url'); ?>/images/">
-		 <?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 	</div><!-- #page -->
 
 	<!-- load custom js -->
@@ -52,7 +51,6 @@
 		<script src="<?php bloginfo('template_url'); ?>/js/functions.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/swiper/swiper.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/slidemenu.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/js/autopager.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/jquery-ias.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/app.js"></script>
 		<script src="http://tabi-labo.com/wp-content/themes/tabilabo/js/jquery.inview.min.js"></script>

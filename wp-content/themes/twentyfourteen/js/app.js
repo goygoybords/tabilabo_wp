@@ -72,6 +72,7 @@
     var feature   = '<a href=""><img src=" ' + imglink + 'icon_feature.png">' + '</a>' ;
     var issue     = '<a href=""><img src=" ' + imglink + 'icon_issue.png">' + '</a>' ;
     var food      = '<a href=""><img src=" ' + imglink + 'icon_food.png">' + '</a>' ;
+    
     $(".li_trend").prepend(trend);
     $(".li_travel").prepend(travel);
     $(".li_culture").prepend(culture);
@@ -84,7 +85,7 @@
     $(".li_issue").prepend(issue);
     $(".li_food").prepend(food);
 
-    var imglink2 = $(".imglink2").val();
+    $('.nav-links a[rel=next]').addClass( "next" );
 
     var ias = jQuery.ias({
         container:  '.site-content',
@@ -96,15 +97,11 @@
     ias.extension(new IASSpinnerExtension());            // shows a spinner (a.k.a. loader)
     //ias.extension(new IASTriggerExtension({offset: 3})); // shows a trigger after page 3
     ias.extension(new IASNoneLeftExtension({
-        text: 'There are no more pages left to load.'      // override text when no pages left
+        text: ''      // override text when no pages left
     }));
 
-    //alert(imglink2);
-    // $('.site-content').infinitescroll({
-    //         navSelector  : "nav.navigation", 
-    //         nextSelector : "a.next",    
-    //         itemSelector : "article.post",          
-    //         loadingImg   : 'http://localhost/tabilabo_wp/wp-content/themes/twentyfourteen/images/loader.gif',
-    //         loadingText  : "releasing new post wait for a while"
+    
 
-    //     });
+
+
+// .nav-links a.next
